@@ -8,4 +8,8 @@ class Task {
   Map<String, dynamic> toMap() {
     return {'id': id, 'title': title, 'isDone': isDone ? 1 : 0};
   }
+
+  factory Task.formMap(Map<String, dynamic> map) {
+    return Task(title: map['title'], isDone: map['isDone'] == 1);
+  }
 }
