@@ -26,13 +26,31 @@ class _TaskHomePageState extends State<TaskHomePage> {
             ],
           ),
 
-          ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: Checkbox(value: false, onChanged:(_){}),
-              );
-            },
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Checkbox(value: false, onChanged: (_) {}),
+                  title: Text("This is title"),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.edit),
+                        color: Colors.orange,
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.delete),
+                        color: Colors.red,
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),
